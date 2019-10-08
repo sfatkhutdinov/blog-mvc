@@ -8,7 +8,7 @@ import java.util.Date;
  * Author: stanislav
  * Date: 10/5/19
  * Project: blog-mvc
- * Package: edu.umuc.blogz.models
+ * Package: edu.umuc.cmsc495.models
  */
 @Entity
 @Table(name = "post")

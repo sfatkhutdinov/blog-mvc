@@ -11,7 +11,7 @@ import javax.servlet.http.HttpSession;
  * Author: stanislav
  * Date: 10/5/19
  * Project: blog-mvc
- * Package: edu.umuc.blogz.controllers
+ * Package: edu.umuc.cmsc495.controllers
  */
 public abstract class AbstractController {
 

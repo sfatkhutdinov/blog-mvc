@@ -12,7 +12,7 @@ import java.util.List;
  * Author: stanislav
  * Date: 10/5/19
  * Project: blog-mvc
- * Package: edu.umuc.blogz.controllers
+ * Package: edu.umuc.cmsc495.controllers
  */
 @Controller
 public class BlogController extends AbstractController {
