@@ -50,6 +50,17 @@ public class PostController extends AbstractController {
         return "redirect:/blog/" + author.getUsername() + "/" + post.getUid();
     }
 
+    //TODO: I can't figure out the right combination for the post data to be displayed
+//   @RequestMapping(value = "/blog/{username}/{postId}", method = RequestMethod.GET)
+//   public String posts(@PathVariable String username, @PathVariable int postId, Model model) {
+//        User user = userDao.findByUsername(username);
+//        Post post = postDao.findByAuthor(username);
+//        String title = post.getAuthor().getUsername();
+//        model.addAttribute("post.title", title);
+//
+//        return "redirect:/blog/post";
+//   }
+
     @RequestMapping(value = "/blog/{username}", method = RequestMethod.GET)
     public String userPosts(@PathVariable String username, Model model) {
         User user = userDao.findByUsername(username);
