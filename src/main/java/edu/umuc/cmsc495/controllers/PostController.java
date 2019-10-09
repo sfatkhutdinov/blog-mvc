@@ -65,6 +65,9 @@ public class PostController extends AbstractController {
         model.addAttribute("body",body);
         Date created = new Date();
         model.addAttribute("created",created);
+        List<Post> posts = user.getPosts();
+
+        model.addAttribute("posts",posts);
         return "post";
    }
 
