@@ -5,11 +5,11 @@
 <body>
 
 <div th:replace="template :: navigation"></div>
-<h2><a th:href="'/blog/' + ${post.author.username} + '/' + ${post.uid}" th:text="${post.title}"></a></h2>
+<h2><a th:href="'/blog/' + ${username} + '/' + ${postId}" th:text="${title}"></a></h2>
 
-<p name = "body" th:text="${post.body}"></p>
+<p name = "body" th:text="${body}"></p>
 
-<p class="post-author">written by <a th:href="'/blog/' + ${post.author.username}" th:text="${post.author.username}"></a></p>
-<p class="created">created: <span th:text="${#dates.format(post.created, 'yyyy-MM-dd')}"></span></p>
+<p class="post-author">written by <a th:href="'/blog/' + ${username}" th:text="${username}"></a></p>
+<p class="created">created: <span th:text="${#dates.format(created, 'yyyy-MM-dd')}"></span></p>
 </body>
 </html>
