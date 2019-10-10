@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="dochead">
+    <link th:icon="@{/img/favicon.ico}" rel="icon">
 <!--    <link th:href="@{/css/normalize.css}" rel="stylesheet" />-->
 <!--    <link th:href="@{/css/styles.css}" rel="stylesheet" />-->
     <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
@@ -27,17 +28,25 @@
     </div>
 </nav>
 
-<!--<nav th:fragment="navigation">-->
-<!--    <ul id="user-account">-->
-<!--        <li><a href="/login">login</a></li>-->
-<!--        <li><a href="/logout">logout</a></li>-->
-<!--    </ul>-->
-<!--    <ul>-->
-<!--        <li><a href="/">home</a></li>-->
-<!--        <li><a href="/blog">all posts</a></li>-->
-<!--        <li><a href="/blog/newpost">new post</a></li>-->
-<!--    </ul>-->
-<!--</nav>-->
+
+<div th:fragment="card" class="card text-white bg-success mb-3" style="max-width: 20rem;">
+    <div class="card-header">University of Maryland University College</div>
+    <div class="card-body">
+        <h4 class="card-title">bLOG</h4>
+        <img th:src="@{/img/site-logo.png}">
+        <p class="card-text">
+            This is the final project for the CMSC 495 6380
+            Current Trends and Projects in Computer Science (2198)
+            class at UMUC. The team will create a web blog that allows
+            users to create accounts in order to post entries.
+            Group 5: Stanislav Fatkhutdinov, Jennifer Johnson,
+            Mahamud Sazzad, Angela Phillips.
+        </p>
+    </div>
+</div>
+
+
+
 
 </body>
 </html>
