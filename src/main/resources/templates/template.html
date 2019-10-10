@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="dochead">
-    <link th:href="@{/css/normalize.css}" rel="stylesheet" />
-    <link th:href="@{/css/styles.css}" rel="stylesheet" />
-    <title>CMSC495 Group 5</title>
+<!--    <link th:href="@{/css/normalize.css}" rel="stylesheet" />-->
+<!--    <link th:href="@{/css/styles.css}" rel="stylesheet" />-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <title>bLOG</title>
 </head>
 
 <body>
 
-<nav th:fragment="navigation">
-    <ul id="user-account">
-        <li><a href="/login">login</a></li>
-        <li><a href="/logout">logout</a></li>
-    </ul>
-    <ul>
-        <li><a href="/">home</a></li>
-        <li><a href="/blog">all posts</a></li>
-        <li><a href="/blog/newpost">new post</a></li>
-    </ul>
+<nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">bLOG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/blog">all posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blog/newpost">new post</a>
+            </li>
+        </ul>
+    </div>
 </nav>
+
+<!--<nav th:fragment="navigation">-->
+<!--    <ul id="user-account">-->
+<!--        <li><a href="/login">login</a></li>-->
+<!--        <li><a href="/logout">logout</a></li>-->
+<!--    </ul>-->
+<!--    <ul>-->
+<!--        <li><a href="/">home</a></li>-->
+<!--        <li><a href="/blog">all posts</a></li>-->
+<!--        <li><a href="/blog/newpost">new post</a></li>-->
+<!--    </ul>-->
+<!--</nav>-->
 
 </body>
 </html>

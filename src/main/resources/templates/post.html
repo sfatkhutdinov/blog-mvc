@@ -5,15 +5,28 @@
 <body>
 
 <div th:replace="template :: navigation"></div>
-<h2 th:each="post:${posts}">
-    <a th:href="'/blog/' + ${post.author.username} + '/' + ${post.author.getUid()}" th:text="${post.title}"></a></h2>
+<!--<h2 th:text="${title}">-->
+<!--&lt;!&ndash;    <a th:href="'/blog/' + ${post.author.username} + '/' + ${post.author.uid}" th:text="${title}"></a>&ndash;&gt;-->
+<!--</h2>-->
 
-<p name = "body" th:text="${body}"></p>
+<!--<p name = "body" th:text="${body}"></p>-->
 
-<p class="post-author" th:each="post:${posts}" >
-    written by
-    <a th:href="'/blog/' + ${post.author.username}" th:text="${post.author.username}"></a>
-</p>
-<p class="created">created: <span th:text="${#dates.format(created, 'yyyy-MM-dd')}"></span></p>
+<!--<p class="post-author">written by-->
+<!--<a th:href="'/blog/' + ${username}" th:text="${username}"></a></p>-->
+<!--<p class="created">written on <span th:text="${#dates.format(created, 'yyyy-MM-dd')}"></span></p>-->
+
+
+<div class="jumbotron">
+    <h1 class="display-3" th:text="${title}"></h1>
+    <p class="lead" th:text="${body}"></p>
+    <hr class="my-4">
+    <p> Written by <!--/*@thymesVar id="user" type="edu.umuc.cmsc495.models.User"*/-->
+    <span th:text="${author}"></span> on <span th:text="${#dates.format(created, 'dd-MMM-yyyy')}"></span></p>
+  
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" th:href="'/blog/' + ${username.toString()}" role="button">More by Author</a>
+    </p>
+</div>
+
 </body>
 </html>
