@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head th:fragment="dochead">
+    <link th:icon="@{/img/favicon.ico}" rel="icon">
+<!--    <link th:href="@{/css/normalize.css}" rel="stylesheet" />-->
+<!--    <link th:href="@{/css/styles.css}" rel="stylesheet" />-->
+    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+    <title>bLOG</title>
+</head>
+
+<body>
+
+<nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="/">bLOG</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="/blog">all posts</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/blog/newpost">new post</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="/logout">logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+<div th:fragment="card" class="card text-white bg-success mb-3"
+     style="
+        max-width: 20rem;
+        overflow: auto;
+        float: right;
+    ">
+    <div class="card-header">University of Maryland University College</div>
+    <div class="card-body">
+        <h4 class="card-title">bLOG</h4>
+        <img th:src="@{/img/site-logo.png}">
+        <p class="card-text">
+            This is the final project for the CMSC 495 6380
+            Current Trends and Projects in Computer Science (2198)
+            class at UMUC. The team will create a web blog that allows
+            users to create accounts in order to post entries.
+            Group 5: Stanislav Fatkhutdinov, Jennifer Johnson,
+            Mahamud Sazzad, Angela Phillips.
+        </p>
+    </div>
+</div>
+
+</body>
+</html>
