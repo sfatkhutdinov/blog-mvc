@@ -24,7 +24,7 @@
     <span th:text="${author}"></span> on <span th:text="${#dates.format(created, 'dd-MMM-yyyy')}"></span></p>
   
     <p class="lead">
-        <a class="btn btn-primary btn-lg" th:href="'/blog/' + ${username.toString()}" role="button">More by Author</a>
+        <a class="btn btn-primary btn-lg" th:href="'/blog/' + ${author}" role="button">More by <span th:text="${author}"></span></a>
     </p>
 </div>
 
