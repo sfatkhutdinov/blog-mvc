@@ -5,16 +5,30 @@
 <body>
 
 <div th:replace="template :: navigation"></div>
-<div class="jumbotron">
-    <h1 class="display-3" th:text="${title}"></h1>
-    <p class="lead" th:text="${body}"></p>
-    <hr class="my-4">
-    <p> Written by
-    <span th:text="${author}"></span> on <span th:text="${#dates.format(created, 'dd-MMM-yyyy')}"></span></p>
-  
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" th:href="'/blog/' + ${author}" role="button">More by <span th:text="${author}"></span></a>
-    </p>
+<!--<div class="jumbotron">-->
+<!--    <h1 class="display-3" th:text="${title}"></h1>-->
+<!--    <p class="lead" th:text="${body}"></p>-->
+<!--    <hr class="my-4">-->
+<!--    <p> Written by-->
+<!--    <span th:text="${author}"></span> on <span th:text="${#dates.format(created, 'dd-MMM-yyyy')}"></span></p>-->
+<!--  -->
+<!--    <p class="lead">-->
+<!--        <a class="btn btn-primary btn-lg" th:href="'/blog/' + ${author}" role="button">More by <span th:text="${author}"></span></a>-->
+<!--    </p>-->
+<!--</div>-->
+
+<div class="card mb-3">
+    <h1 class="card-header" th:text="${title}"></h1>
+
+    <img style=" display: block;" src="https://picsum.photos/600/300" alt="Card image">
+    <div class="card-body">
+        <p th:text="${body}" class="card-text"></p>
+    </div>
+    <div class="card-body">
+        <a th:href="'/blog/' + ${author}" class="card-link">Written by <span th:text="${author}"></span></a>
+    </div>
+    <div class="card-footer text-muted" th:text="${#dates.format(created, 'dd-MMM-yyyy')}">
+    </div>
 </div>
 
 </body>
