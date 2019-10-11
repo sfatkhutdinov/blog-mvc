@@ -15,31 +15,17 @@
                 <div class="card-header" style="text-align: center;">
                     <h4><a th:href="'/blog/' + ${post.author.username} + '/' + ${post.uid}"
                            th:text="${post.title}"></a></h4>
-                    <p class="post-author">By:
-                        <a th:href="'/blog/' + ${post.author.username}" th:text="${username}"></a>
-                    </p>
                 </div>
                 <div class="card-body">
                     <p class="card-text" th:text="${post.body}"></p>
                 </div>
             </div>
         </div>
-
         <aside class="ml-lg-auto mr-5 col-md-4">
             <div class="card p-3 mb-3">
-                <h3 class="card-header">Info</h3>
-                <img class="card-img align-items-center" style="height: 200px; width: 50%;"
-                     src="/img/site-logo.png" alt="Card image">
+                <h3 class="card-header">Random Image to Brighten Your Day</h3>
                 <div class="card-body">
-                    <p class="card-text">Archives</p>
-                </div>
-                <ol class="list-group list-group-flush">
-                    <li class="list-group-item"><a href="#">August 2019</a></li>
-                    <li class="list-group-item"><a href="#">September 2019</a></li>
-                    <li class="list-group-item"><a href="#">October 2019</a></li>
-                </ol>
-                <div class="card-footer text-muted">
-                    2 days ago
+                 <img style=" display: block;" src="https://picsum.photos/300" alt="Card image"/>
                 </div>
             </div>
             <div class="card">
@@ -47,8 +33,8 @@
                     <h4 class="card-title">Resources</h4>
                     <h6 class="card-subtitle mb-2 text-muted">Resources for website</h6>
                     <p class="card-text"></p>
-                    <a href="#" class="card-link">Github</a>
-                    <a href="#" class="card-link">Bootstrap</a>
+                    <a href="https://github.com/sfatkhutdinov/blog-mvc" class="card-link">Github</a>
+                    <a href="https://bootswatch.com" class="card-link">Bootstrap</a>
                 </div>
             </div>
         </aside>
