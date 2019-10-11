@@ -23,20 +23,21 @@
 
     <div class="row ml-3">
         <div class="col-md-7">
-            <!-- I couldn't get posts to work but if someone can they can change this to posts -->
-            <h2 style="text-align: center;">Users</h2>
-            <div th:each="user : ${users}" class="card border-secondary mb-3">
-                <div class="card-header" style="text-align: center;">
-                    <h4>
-                        <a th:href="'/blog/' + ${user.username}" th:text="user.username"></a>
-                    </h4>
-                </div>
+            <!-- TODO: Need to get something working here, users? Blogs? -->
+            <h2 style="text-align: center;">Recent Posts</h2>
+            <div class="card border-secondary mb-3">
+                <div class="card-header" style="text-align: center;"><h4>Blog Title</h4></div>
                 <div class="card-body">
-                    <p class="card-text">
-                        <a th:href="'/blog/' + ${user.username}" th:text="user.author_uid"></a>
-                    </p>
+                    <p class="card-text">Blog body content</p>
                 </div>
             </div>
+            <div class="card border-secondary mb-3">
+                <div class="card-header" style="text-align: center;"><h4>Blog Title</h4></div>
+                <div class="card-body">
+                    <p class="card-text">Blog body content</p>
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-info">View More</button>
         </div>
 
         <aside class="ml-lg-auto mr-5 col-md-4">
