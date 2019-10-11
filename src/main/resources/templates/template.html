@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="dochead">
-    <link th:icon="@{/img/favicon.ico}" rel="icon">
-<!--    <link th:href="@{/css/normalize.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{/css/styles.css}" rel="stylesheet" />-->
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+
+    <link rel="icon" href="../static/img/favicon.ico"/>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <!-- Custom styles for this template -->
+
     <title>bLOG</title>
 </head>
 
 <body>
 
 <nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="/">bLOG</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <a class="navbar-brand" href="#">CMSC 495 bLog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/blog">all posts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blog/newpost">new post</a>
-            </li>
-
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">logout</a>
-            </li>
-        </ul>
-    </div>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">View Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Create Post</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-success mr-1 my-2 my-sm-0" type="submit">Login</button>
+                <button class="btn btn-warning my-2 my-sm-0" type="submit">Logout</button>
+            </form>
+        </div>
 </nav>
 
 
@@ -52,6 +60,26 @@
             Mahamud Sazzad, Angela Phillips.
         </p>
     </div>
+</div>
+
+<div th:fragment="footer" class="align-content-center border border-top border-light mt-2">
+    <footer class="blog-footer">
+        <div class="container">
+            <div class="footer_center">
+                <h5 class="col-sm-12 text-center mt-2">
+                    <!-- Show username if logged in -->
+                    <span>
+                        | Logged User: |
+                            Time: <b></b> |
+                    </span>
+
+                    <div>
+                        <p class="text-center">&copy; 2019 University of Maryland University College</p>
+                    </div>
+                </h5>
+            </div>
+        </div>
+    </footer>
 </div>
 
 </body>

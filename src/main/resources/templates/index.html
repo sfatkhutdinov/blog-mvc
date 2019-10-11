@@ -6,13 +6,74 @@
 
 <div th:replace="template :: navigation"></div>
 
-<h1>blog users!</h1>
+<main role="main">
+    <div class="jumbotron" style="text-align: center; line-height: 5px">
+        <h1 class="display-3">CMSC 495 Blog</h1>
+        <p class="lead">This is the final project for the CMSC 495 6380
+            Current Trends and Projects in Computer Science (2198)
+            class at UMUC.</p>
+        <hr class="border-light">
+        <p>The team will create a web blog that allows
+            users to create accounts in order to post entries.</p>
+        <p class="text-success">
+            Group 5: Stanislav Fatkhutdinov, Jennifer Johnson,
+            Mahamud Sazzad, Angela Phillips.
+        </p>
+    </div>
 
-<div th:each="user : ${users}">
+    <div class="row ml-3">
+        <div class="col-md-7">
+            <!-- TODO: Need to get something working here, users? Blogs? -->
+            <h2 style="text-align: center;">Recent Posts</h2>
+            <div class="card border-secondary mb-3">
+                <div class="card-header" style="text-align: center;"><h4>Blog Title</h4></div>
+                <div class="card-body">
+                    <p class="card-text">Blog body content</p>
+                </div>
+            </div>
+            <div class="card border-secondary mb-3">
+                <div class="card-header" style="text-align: center;"><h4>Blog Title</h4></div>
+                <div class="card-body">
+                    <p class="card-text">Blog body content</p>
+                </div>
+            </div>
+            <button type="button" class="btn btn-outline-info">View More</button>
+        </div>
 
-    <h2><a th:href="'/blog/' + ${user.username}" th:text="${user.username}"></a></h2>
+        <aside class="ml-lg-auto mr-5 col-md-4">
+            <div class="card p-3 mb-3">
+                <h3 class="card-header">Info</h3>
+                <img class="card-img align-items-center" style="height: 200px; width: 50%;"
+                     src="/img/site-logo.png" alt="Card image">
+                <div class="card-body">
+                    <p class="card-text">Archives</p>
+                </div>
+                <ol class="list-group list-group-flush">
+                    <li class="list-group-item"><a href="#">August 2019</a></li>
+                    <li class="list-group-item"><a href="#">September 2019</a></li>
+                    <li class="list-group-item"><a href="#">October 2019</a></li>
+                </ol>
+                <div class="card-footer text-muted">
+                    2 days ago
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">Resources</h4>
+                    <h6 class="card-subtitle mb-2 text-muted">Resources for website</h6>
+                    <p class="card-text"></p>
+                    <a href="#" class="card-link">Github</a>
+                    <a href="#" class="card-link">Bootstrap</a>
+                </div>
+            </div>
+        </aside>
 
-</div>
-<div th:replace="template :: card"></div>
+    </div>
+
+
+</main>
+
+<div th:replace="template :: footer"></div>
+
 </body>
 </html>

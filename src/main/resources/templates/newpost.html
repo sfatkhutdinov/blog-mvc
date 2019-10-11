@@ -6,21 +6,31 @@
 
 <div th:replace="template :: navigation"></div>
 
-<form method="post">
-    <fieldset>
-        <legend>What's on your mind?</legend>
-        <div class="form-group">
-            <label class="col-form-label col-form-label-lg" for="inputLarge">title</label>
-            <input class="form-control form-control-lg" type="text" placeholder="title" id="inputLarge" name="title" th:value="${value}"/>
-        </div>
-        <div class="form-group">
-            <label for="exampleTextarea">body</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3" name="body" th:text="${value}"></textarea>
-        </div>
+<div class="col-md-8 mx-auto my-3" style="min-height: 600px; min-width: 500px;">
+    <div class="modal-header border border-light align-items-center">
+        <img class="card-img-top img-thumbnail" style="width: 200px; height: 200px;"
+             th:src="@{/img/site-logo.png}" src="/img/site-logo.png"/>
+        <h2 class="text-success mx-auto">Write A Blog Post</h2>
+    </div>
+    <form class="justify-content-md-center border border-light rounded" method="post">
+        <fieldset class="mx-auto">
+            <legend>What's on your mind?</legend>
+            <div class="form-group col-md-4 my-2">
+                <label class="col-form-label col-form-label-lg" for="input">title</label>
+                <input class="form-control form-control-lg" type="text" placeholder="title" id="input"
+                       name="title" th:value="${value}"/>
+            </div>
+            <div class="form-group col-md-6 my-2">
+                <label for="textarea">body</label>
+                <textarea class="form-control" id="textarea" rows="3" name="body" th:text="${value}"></textarea>
+            </div>
         </fieldset>
         <button type="submit" class="btn btn-primary">Save</button>
-    </fieldset>
-</form>
+        </fieldset>
+    </form>
+    <p class="tab-content align-content-center">Don't have an account? <a href="/signup">Create one!</a></p>
+</div>
+
 <!--<form method="post">-->
 <!--    <label>-->
 <!--        <div>title</div>-->
