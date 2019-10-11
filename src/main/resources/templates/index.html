@@ -23,7 +23,24 @@
 
     <div class="row ml-3">
         <div class="col-md-7">
-            <!-- TODO: Need to get something working here, users? Blogs? -->
+            <h2 style="text-align: center;">Users</h2>
+            <div class="card border-secondary mb-3">
+                <div th:each="user : ${users}">
+                    <div class="card-header" style="text-align: center;">
+                        <h4>User: <a th:href="'/blog/' + ${user.username}" th:title="${user.username}"></a> </h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="container my-3" style="align-items: center;">
+                            <img class="border border-info " style="border-width: 2px; display: block;"
+                                 src="http://picsum.photos/300/200" alt="Random Image">
+                        </div>
+                        <div class="card-footer">
+                            <p class="card-text">User ID: <a th:title="${user.uid}"></a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- TODO: Need to get something working here Blogs?
             <h2 style="text-align: center;">Recent Posts</h2>
             <div class="card border-secondary mb-3">
                 <div class="card-header" style="text-align: center;"><h4>Blog Title</h4></div>
@@ -37,7 +54,7 @@
                     <p class="card-text">Blog body content</p>
                 </div>
             </div>
-            <button type="button" class="btn btn-outline-info">View More</button>
+            <button type="button" class="btn btn-outline-info">View More</button> -->
         </div>
 
         <aside class="ml-lg-auto mr-5 col-md-4">
