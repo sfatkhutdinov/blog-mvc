@@ -6,26 +6,34 @@
 <body>
 <div th:replace="template :: navigation"></div>
 
-<h1>Login</h1>
 <p class="error" th:text="${error}"></p>
-<form method="post">
-    <table>
-        <tr>
-            <td><label th:for="username">Username</label></td>
-            <td>
-                <input name="username" type="text" th:value="${username}"></input>
-            </td>
-        </tr>
-        <tr>
-            <td><label th:for="password">Password</label></td>
-            <td>
-                <input name="password" type="password"></input>
-            </td>
-        </tr>
-    </table>
-    <button type="submit">Log In</button>
-</form>
-<p>Don't have an account? <a href="/signup">Create one!</a></p>
+<div class="col-md-6 mx-auto my-3" style="min-height: 600px; min-width: 500px;">
+    <div class="modal-header border border-light align-items-center">
+        <img class="card-img-top img-thumbnail" style="width: 200px; height: 200px;"
+             th:src="@{/img/site-logo.png}" src="/img/site-logo.png"/>
+        <h2 class="text-success mx-auto">Account Login</h2>
+    </div>
+    <form method="post">
+        <div class="justify-content-md-center border border-light rounded">
+            <div class="form-group col-md-6 mb-2">
+                <label class="my-2" th:for="usernameEntry">Username</label>
+                <input type="text" name="usernameEntry" th:value="${username}" class="form-control"
+                       id="username" placeholder="Enter username">
+            </div>
+            <div class="form-group col-md-6 mb-2">
+                <label class="my-2" th:for="passwordEntry">Password</label>
+                <input type="password" name="passwordEntry" class="form-control" id="password" placeholder="Password">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary btn-lg mt-2 justify-content-center" type="submit">Log In</button>
+            </div>
+        </div>
+    </form>
+
+    <p class="tab-content align-content-center">Don't have an account? <a href="/signup">Create one!</a></p>
+</div>
+
+<div th:replace="template :: footer"></div>
 
 </body>
-</html>l>
+</html>

@@ -1,35 +1,44 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="dochead">
-    <link th:icon="@{/img/favicon.ico}" rel="icon">
-<!--    <link th:href="@{/css/normalize.css}" rel="stylesheet" />-->
-<!--    <link th:href="@{/css/styles.css}" rel="stylesheet" />-->
-    <link th:href="@{/css/bootstrap.css}" rel="stylesheet" />
+
+    <link rel="icon" href="../static/img/favicon.ico"/>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.css}">
+
+    <!-- Custom styles for this template -->
+
     <title>bLOG</title>
 </head>
 
 <body>
 
 <nav th:fragment="navigation" class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="/">bLOG</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+        <a class="navbar-brand" href="/">CMSC 495 bLog</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01"
+                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarColor01">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="/blog">all posts</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/blog/newpost">new post</a>
-            </li>
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog">View Posts</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog/newpost">Create Post</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a class="btn btn-info mr-1 my-2 my-sm-0" href="/login">Login</a>
+                <a class="btn btn-warning my-2 my-sm-0" href="/logout">Logout</a>
 
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">logout</a>
-            </li>
-        </ul>
-    </div>
+            </form>
+        </div>
 </nav>
 
 
@@ -54,5 +63,47 @@
     </div>
 </div>
 
+<div th:fragment="footer" class="align-content-center border border-top border-light mt-2">
+    <footer class="blog-footer">
+        <div class="container">
+            <div class="footer_center">
+                <h5 class="col-sm-12 text-center mt-2">
+                    <!-- Show username if logged in -->
+
+                    <span>
+                        <b th:text="${#dates.createNow()}">
+                    </b>
+                    </span>
+
+                    <div>
+                        <p class="text-center">&copy; 2019 University of Maryland University College</p>
+                    </div>
+                </h5>
+            </div>
+        </div>
+    </footer>
+</div>
+
+
+<div th:fragment="aside">
+    <aside class="ml-lg-auto mr-5 col-md-4">
+        <div class="card p-3 mb-3">
+            <h3 class="card-header">Random Image to Brighten Your Day</h3>
+            <div class="card-body">
+                <img style=" display: block;" src="https://picsum.photos/300" alt="Card image"/>
+            </div>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resources</h4>
+                <h6 class="card-subtitle mb-2 text-muted">Resources for website</h6>
+                <p class="card-text"></p>
+                <a href="https://github.com/sfatkhutdinov/blog-mvc" class="card-link">Github</a>
+                <a href="https://bootswatch.com" class="card-link">Bootstrap</a>
+            </div>
+        </div>
+    </aside>
+
+</div>
 </body>
 </html>
