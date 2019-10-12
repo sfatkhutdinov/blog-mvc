@@ -34,7 +34,7 @@ public class Post extends AbstractEntity {
     }
 
     @NotNull
-    @Column(name = "title")
+    @Column(name = "title", length = 1000)
     public String getTitle() {
         return title;
     }
@@ -45,7 +45,7 @@ public class Post extends AbstractEntity {
     }
 
     @NotNull
-    @Column(name = "body")
+    @Column(name = "body", length = 10000)
     public String getBody() {
         return body;
     }
